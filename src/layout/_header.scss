@@ -1,0 +1,34 @@
+// Header
+
+header {
+  background: $header-background;
+  color: $header-color;
+
+  @include padding(.5,.5);
+
+  .brand {
+    font-weight: $font-weight-heavy;
+    @include font-size(2.5);
+    @include line-height(1);
+  }
+}
+
+@media screen and (min-width: #{ $max-width + 5 + 'em'}) {
+  $leading: $leading-desktop;
+  $leading-rem: $leading-rem-desktop;
+
+  @import '../mixins/font-size';
+  @import '../mixins/line-height';
+  @import '../mixins/margin';
+  @import '../mixins/padding';
+
+  header {
+    @include padding(.5,.5);
+
+    .brand {
+      font-weight: $font-weight-heavy;
+      @include font-size(2.5);
+      @include line-height(1);
+    }
+  }
+}

@@ -1,0 +1,75 @@
+// fonts
+$font-family: 'Inter', Helvetica, sans-serif;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-heavy: 700;
+$font-height: 1.5;
+
+// colors
+$dark-grey: #333447;
+$dark-gray: #333447; // for the Americans
+
+$header-background: black;
+$header-color: white;
+
+// grid
+$width: 96%;
+$gutter: 4%;
+$breakpoint-small: 33.75em; // 540px
+$breakpoint-med: 45em; // 720px
+$breakpoint-large: 60em; // 960px
+
+
+// gutenberg
+
+/* Configuration
+   ========================================================================== */
+
+$edit-mode: true !default; // [ true / false ] - Enables/disables the grid toggle button.
+
+// Modular Scale
+// todo goldener schnitt??
+$modular-scale: (
+        xxxl: 4.3,
+        xxl: 3.5,
+        xl: 3,
+        l: 2.5,
+        m: 2,
+        s: 1.6875,
+        xs: 1.4375,
+        xxs: 1.2,
+        xxxs: 1,
+        xxxxs: 0.8125
+) !default;
+
+// Colors
+$color-font-body: $dark-grey !default;
+$color-font-headings: $color-font-body !default;
+$color-font-light: #888 !default;
+$color-font-figcaption: $color-font-body !default;
+
+/* Font themes
+   ========================================================================== */
+$font-body: $font-family;
+$font-headings: null !default;
+
+// Base sizes
+$base-font-size: 100 !default; // In %. Also used for mobile. Number only, no units.
+$base-font-size-desktop: 112.5 !default; // In %. Used to calculate the desktop font size. Number only, no units.
+$line-height: 1.625 !default;
+$line-height-desktop: 1.7 !default;
+$max-width: 35 !default; // Number only, no units. Gets converted to REMs and pixels.
+
+/* Calculations
+   ========================================================================== */
+
+// Mobile base & leading
+$base: 16 * ($base-font-size / 100);
+$leading: round($base * $line-height);
+$leading-rem: $leading / $base;
+
+// Desktop base & leading
+$base-desktop: 16 * ($base-font-size-desktop / 100);
+$leading-desktop: round($base-desktop * $line-height-desktop);
+$leading-rem-desktop: $leading-desktop / $base-desktop;
+

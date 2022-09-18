@@ -1,0 +1,38 @@
+// Jumbotron
+
+.jumbotron {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+
+  background: red;
+  color: white;
+
+  @include padding(1.5,.5,.5);
+  @include margin-bottom(1);
+  @include line-height(1);
+
+  @media only screen and (min-width: $breakpoint-small) {
+    width: 85%;
+  }
+
+  @media only screen and (min-width: $breakpoint-large) {
+    width: 80%;
+    max-width: 60rem;
+  }
+}
+
+@media screen and (min-width: #{ $max-width + 5 + 'em'}) {
+  $leading: $leading-desktop;
+  $leading-rem: $leading-rem-desktop;
+
+  @import '../mixins/padding';
+  @import '../mixins/margin';
+  @import '../mixins/line-height';
+
+  .jumbotron {
+    @include padding(1.5,.5,.5);
+    @include margin-bottom(1);
+    @include line-height(1);
+  }
+}

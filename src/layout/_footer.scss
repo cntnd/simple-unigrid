@@ -1,0 +1,24 @@
+// Footer
+
+footer {
+  background: $dark-gray;
+  color: $header-color;
+
+  @include padding(.5,.5);
+  @include margin-top(1.5);
+}
+
+@media screen and (min-width: #{ $max-width + 5 + 'em'}) {
+  $leading: $leading-desktop;
+  $leading-rem: $leading-rem-desktop;
+
+  @import '../mixins/font-size';
+  @import '../mixins/line-height';
+  @import '../mixins/margin';
+  @import '../mixins/padding';
+
+  footer {
+    @include padding(.5,.5);
+    @include margin-top(1.5);
+  }
+}
