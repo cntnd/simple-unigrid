@@ -1,0 +1,28 @@
+// brick-width
+@mixin brick-width($number, $half:false) {
+  $width: ($brick-width / $brick-size) * $number;
+  $margin: $leading;
+  $margin-rem: $leading-rem;
+  @if $half {
+    $margin: $margin / 2;
+    $margin-rem: $margin-rem / 2;
+  }
+
+  width: calc(#{$width} - #{$margin + 'px'});
+  width: calc(#{$width} - #{$margin-rem + 'rem'});
+}
+
+@mixin brick-spacing($number,$prepend:true) {
+  $width: ($brick-width / $brick-size) * $number;
+  $margin: $leading;
+  $margin-rem: $leading-rem;
+
+  @if $prepend {
+    margin-left: calc(#{$width} + #{$margin + 'px'}) !important;
+    margin-left: calc(#{$width} + #{$margin-rem + 'rem'}) !important;
+  }
+  @else {
+    margin-right: calc(#{$width} + #{$margin + 'px'}) !important;
+    margin-right: calc(#{$width} + #{$margin-rem + 'rem'}) !important;
+  }
+}

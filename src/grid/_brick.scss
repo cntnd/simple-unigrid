@@ -39,7 +39,7 @@
   $leading: $leading-desktop;
   $leading-rem: $leading-rem-desktop;
 
-  @import 'src/mixins/brick-width';
+  @import 'src/mixins/brick';
   @import 'src/mixins/padding';
   @import 'src/mixins/margin';
   @import 'src/mixins/line-height';

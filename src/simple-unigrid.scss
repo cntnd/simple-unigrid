@@ -3,7 +3,7 @@
 
 @import '_vars.scss';
 
-@import "mixins/brick-width";
+@import "src/mixins/brick";
 @import "mixins/font-size";
 @import "mixins/height";
 @import "mixins/line-height";
@@ -43,7 +43,11 @@
 @import "modules/text";
 @import "modules/video";
 
+@import "modules/margins";
+@import "modules/paddings";
+
 @import 'grid/brick';
+@import 'grid/brick-spacing';
 
 @import 'mobile/mobile';
 

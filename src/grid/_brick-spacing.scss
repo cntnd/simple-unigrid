@@ -1,0 +1,30 @@
+// Brick Spacing Grid
+
+@for $i from 1 through $brick-size {
+  .append-sm--#{$i} {
+    @include brick-spacing($i, false);
+  }
+  .prepend-sm--#{$i} {
+    @include brick-spacing($i);
+  }
+}
+
+@media screen and (min-width: #{ $max-width + 5 + 'em'}) {
+  $leading: $leading-desktop;
+  $leading-rem: $leading-rem-desktop;
+
+  @import 'src/mixins/brick';
+
+  @for $i from 1 through $brick-size {
+    $width: ($brick-width / $brick-size) * $i;
+    $margin: #{ $leading + 'px'};
+    $margin-rem: #{ $leading-rem + 'rem'};
+
+    .append--#{$i} {
+      @include brick-spacing($i, false);
+    }
+    .prepend--#{$i} {
+      @include brick-spacing($i);
+    }
+  }
+}

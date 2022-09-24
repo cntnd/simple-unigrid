@@ -1,13 +1,23 @@
 // Margin-top
-@mixin margin-top($number) {
-  margin-top: #{ $number * $leading + 'px'};
-  margin-top: #{ $number * $leading-rem + 'rem'};
+@mixin margin-top($number,$is-important:false) {
+  $important: '';
+  @if $is-important {
+    $important: ' !important';
+  }
+
+  margin-top: #{ $number * $leading + 'px' + $important};
+  margin-top: #{ $number * $leading-rem + 'rem' + $important};
 }
 
 // Margin-bottom
-@mixin margin-bottom($number) {
-  margin-bottom: #{ $number * $leading + 'px'};
-  margin-bottom: #{ $number * $leading-rem + 'rem'};
+@mixin margin-bottom($number,$is-important:false) {
+  $important: '';
+  @if $is-important {
+    $important: ' !important';
+  }
+
+  margin-bottom: #{ $number * $leading + 'px' + $important};
+  margin-bottom: #{ $number * $leading-rem + 'rem' + $important};
 }
 
 // Margin-horizontal
@@ -27,21 +37,29 @@
 }
 
 // Margin-left
-@mixin margin-left($number) {
+@mixin margin-left($number,$is-important:false) {
   $margin: $number * $leading;
   $margin-rem: $number * $leading-rem;
+  $important: '';
+  @if $is-important {
+    $important: ' !important';
+  }
 
-  margin-left: #{ $margin + 'px'};
-  margin-left: #{ $margin-rem + 'rem'};
+  margin-left: #{ $margin + 'px' + $important};
+  margin-left: #{ $margin-rem + 'rem' + $important};
 }
 
 // Margin-right
-@mixin margin-right($number) {
+@mixin margin-right($number,$is-important:false) {
   $margin: $number * $leading;
   $margin-rem: $number * $leading-rem;
+  $important: '';
+  @if $is-important {
+    $important: ' !important';
+  }
 
-  margin-right: #{ $margin + 'px'};
-  margin-right: #{ $margin-rem + 'rem'};
+  margin-right: #{ $margin + 'px' + $important};
+  margin-right: #{ $margin-rem + 'rem' + $important};
 }
 
 // Margin-vertical
@@ -72,4 +90,14 @@
     margin: #{ $top * $leading + 'px'} #{ $right * $leading + 'px'} #{ $bottom * $leading + 'px'} #{ $left * $leading + 'px'};
     margin: #{ $top * $leading-rem + 'rem'} #{ $right * $leading-rem + 'rem'} #{ $bottom * $leading-rem + 'rem'} #{ $left * $leading-rem + 'rem'};
   }
+}
+
+@mixin margin-equal($number,$is-important:false) {
+  $important: '';
+  @if $is-important {
+    $important: ' !important';
+  }
+
+  margin: #{ $number * $leading + 'px' + $important};
+  margin: #{ $number * $leading-rem + 'rem' + $important};
 }

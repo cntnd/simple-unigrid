@@ -8,7 +8,8 @@ fieldset {
   box-shadow:0 0 0 1px $fieldset-color inset;
 
   legend {
-    @include padding-equal(.5);
+    @include padding-right(.5);
+    @include padding-left(.5);
     @include line-height(1);
 
     margin: 0;
@@ -88,9 +89,10 @@ fieldset {
 
   fieldset {
     @include padding-equal(.5);
-    @include line-height(1);
 
     legend {
+      @include padding-right(.5);
+      @include padding-left(.5);
       @include line-height(1);
     }
   }
