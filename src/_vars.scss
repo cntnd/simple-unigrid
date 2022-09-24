@@ -82,4 +82,7 @@ $brick-gutter: $leading-rem;
 $brick-size: 12;
 $brick-padding: .25;
 $brick-margin-vertical: .5;
-$brick-margin-horizontal: 0;
+$brick-margin-horizontal: 1;
+
+$row-margin-vertical: $brick-margin-vertical;
+$row-margin-horizontal: -1;

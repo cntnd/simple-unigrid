@@ -10,7 +10,7 @@
   margin-bottom: #{ $number * $leading-rem + 'rem'};
 }
 
-// Margin-left
+// Margin-horizontal
 @mixin margin-horizontal($number, $half:true) {
   $margin: $number * $leading;
   $margin-rem: $number * $leading-rem;
@@ -24,6 +24,22 @@
 
   margin-left: #{ $margin + 'px'};
   margin-left: #{ $margin-rem + 'rem'};
+}
+
+// Margin-vertical
+@mixin margin-vertical($number, $half:true) {
+  $margin: $number * $leading;
+  $margin-rem: $number * $leading-rem;
+  @if $half {
+    $margin: $margin / 2;
+    $margin-rem: $margin-rem / 2;
+  }
+
+  margin-top: #{ $margin + 'px'};
+  margin-top: #{ $margin-rem + 'rem'};
+
+  margin-bottom: #{ $margin + 'px'};
+  margin-bottom: #{ $margin-rem + 'rem'};
 }
 
 // Margin

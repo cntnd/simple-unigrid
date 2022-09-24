@@ -1,21 +1,15 @@
 // Brick Grid
 
 .unigrid-row {
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
 
-  @include margin($brick-margin-vertical, $brick-margin-horizontal);
+  @include margin-horizontal($row-margin-horizontal);
+  @include margin-vertical($row-margin-vertical, false);
 
-  /*
-  &.wrap {
-    flex-wrap: wrap;
-    margin-bottom: 0;
-
-    [class^="brick"] {
-      @include margin-bottom($brick-margin-vertical);
-    }
+  [class^="brick"]:first-child {
+    margin-top: 0;
   }
-
-   */
 }
 
 [class^="brick"] p {
@@ -23,13 +17,20 @@
 }
 
 @for $i from 1 through $brick-size {
-  $width: ($brick-width / 12) * $i;
-  $margin: #{ $leading + 'px'};
-  $margin-rem: #{ $leading-rem + 'rem'};
-
   .brick--#{$i} {
     width: 100%;
     @include margin-top($brick-margin-vertical);
+    @include margin-horizontal($brick-margin-horizontal);
+    @include padding(0, $brick-padding);
+  }
+}
+
+@for $i from 1 through $brick-size {
+  .brick-sm--#{$i} {
+    @include brick-width($i);
+    @include margin-horizontal($brick-margin-horizontal);
+    margin-top: 0;
+    margin-bottom: 0;
     @include padding(0, $brick-padding);
   }
 }
@@ -44,35 +45,28 @@
   @import 'src/mixins/line-height';
 
   .unigrid-row {
-    display: flex;
+    flex-wrap: nowrap;
 
-    @include margin($brick-margin-vertical, $brick-margin-horizontal);
-
-    [class^="brick"]:first-child,
-    [class^="brick"].first {
-      margin-left: 0;
-    }
-
-    [class^="brick"]:last-child,
-    [class^="brick"].last {
-      margin-right: 0;
-    }
+    @include margin-horizontal($row-margin-horizontal);
+    @include margin-vertical($row-margin-vertical, false);
 
     &.wrap {
+      flex-wrap: wrap;
+
       [class^="brick"] {
-        @include margin-bottom($brick-margin-vertical);
+        @include margin-bottom($row-margin-vertical);
       }
     }
   }
 
   @for $i from 1 through $brick-size {
-    $width: ($brick-width / 12) * $i;
+    $width: ($brick-width / $brick-size) * $i;
     $margin: #{ $leading + 'px'};
     $margin-rem: #{ $leading-rem + 'rem'};
 
     .brick--#{$i} {
       @include brick-width($i);
-      @include margin-horizontal(1);
+      @include margin-horizontal($brick-margin-horizontal);
       margin-top: 0;
       margin-bottom: 0;
       @include padding(0, $brick-padding);
