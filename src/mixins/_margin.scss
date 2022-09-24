@@ -80,15 +80,29 @@
 
 // Margin
 @mixin margin($top, $right, $bottom:null, $left:null) {
+  $y: auto;
+  $y-rem: auto;
+  @if $top != auto {
+    $y: #{ $top * $leading + 'px'};
+    $y-rem: #{ $top * $leading-rem + 'rem'};
+  }
+
+  $x: auto;
+  $x-rem: auto;
+  @if $right != auto {
+    $x: #{ $right * $leading + 'px'};
+    $x-rem: #{ $right * $leading-rem + 'rem'};
+  }
+
   @if $left == null and $bottom == null {
-    margin: #{ $top * $leading + 'px'} #{ $right * $leading + 'px'};
-    margin: #{ $top * $leading-rem + 'rem'} #{ $right * $leading-rem + 'rem'};
+    margin:$y $x;
+    margin: $y-rem $x-rem;
   } @else if $left == null or $left == $right {
-    margin: #{ $top * $leading + 'px'} #{ $right * $leading + 'px'} #{ $bottom * $leading + 'px'};
-    margin: #{ $top * $leading-rem + 'rem'} #{ $right * $leading-rem + 'rem'} #{ $bottom * $leading-rem + 'rem'};
+    margin: $y $x #{ $bottom * $leading + 'px'};
+    margin: $y-rem $x-rem #{ $bottom * $leading-rem + 'rem'};
   } @else {
-    margin: #{ $top * $leading + 'px'} #{ $right * $leading + 'px'} #{ $bottom * $leading + 'px'} #{ $left * $leading + 'px'};
-    margin: #{ $top * $leading-rem + 'rem'} #{ $right * $leading-rem + 'rem'} #{ $bottom * $leading-rem + 'rem'} #{ $left * $leading-rem + 'rem'};
+    margin: $y $x #{ $bottom * $leading + 'px'} #{ $left * $leading + 'px'};
+    margin: $y-rem $x-rem #{ $bottom * $leading-rem + 'rem'} #{ $left * $leading-rem + 'rem'};
   }
 }
 

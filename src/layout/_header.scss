@@ -1,15 +1,28 @@
 // Header
+// todo fixed
 
 header {
+  display: flex;
+
   background: $header-background;
   color: $header-color;
 
-  @include padding(.5,.5);
+  @include padding(.5,0);
+  @include height(2);
+
+  .menu {
+    @include margin-horizontal(.5,false);
+  }
 
   .brand {
     font-weight: $font-weight-heavy;
     @include font-size(2.5);
     @include line-height(1);
+    @include margin-horizontal(.5,false);
+  }
+
+  .menu + .brand {
+    margin-left: 0;
   }
 }
 
@@ -18,17 +31,22 @@ header {
   $leading-rem: $leading-rem-desktop;
 
   @import '../mixins/font-size';
+  @import '../mixins/height';
   @import '../mixins/line-height';
-  @import '../mixins/margin';
   @import '../mixins/padding';
 
   header {
-    @include padding(.5,.5);
+    @include padding(.5,0);
+    @include height(2);
+
+    .menu {
+      @include margin-horizontal(.5,false);
+    }
 
     .brand {
-      font-weight: $font-weight-heavy;
       @include font-size(2.5);
       @include line-height(1);
+      @include margin-horizontal(.5,false);
     }
   }
 }

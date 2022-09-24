@@ -38,6 +38,7 @@
 @media screen and (min-width: #{ $max-width + 5 + 'em'}) {
   $leading: $leading-desktop;
   $leading-rem: $leading-rem-desktop;
+  $brick-width: $brick-width-desktop;
 
   @import 'src/mixins/brick';
   @import 'src/mixins/padding';
