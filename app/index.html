@@ -85,7 +85,7 @@
             <div class="brick--1"><p>brick--1</p></div>
         </div>
 
-        <hr />
+        <hr/>
 
         <div class="unigrid-row">
             <div class="brick--2"><p>brick--2</p></div>
@@ -147,7 +147,8 @@
         you don’t want columns to expand on mobile devices and small screens, simply use .brick-sm as your column
         class name. For example, if you want to have two blocks of content floating side-by-side on small screens, each
         would be given the class name .brick-sm--6.</p>
-    <p>Be sure to nest columns within a .unigrid-row class. You may also choose to nest rows within a .container class.</p>
+    <p>Be sure to nest columns within a .unigrid-row class. You may also choose to nest rows within a .container
+        class.</p>
 
     <pre>
         <code class="language-html">
@@ -169,7 +170,8 @@
 
     <h2>Simple Typography</h2>
 
-    <p>Simple Grid uses Inter from <a href="https://rsms.me" target="_blank">rsms.me</a> as a base font-family. Font-size is based on root rem units.</p>
+    <p>Simple Grid uses Inter from <a href="https://rsms.me" target="_blank">rsms.me</a> as a base font-family.
+        Font-size is based on root rem units.</p>
 
     <h1>Header 1</h1>
     <h2>Header 2</h2>
@@ -179,6 +181,80 @@
     <h6>Header 6</h6>
 
     <h2>Simple Forms</h2>
+
+
+    <fieldset>
+        <legend>Form</legend>
+        <div class="form-group">
+            <label for="test-input1">label</label>
+            <input id="test-input1" type="text"/>
+            <small class="form-text text-muted">Hilfetext</small>
+        </div>
+
+        <div class="form-group">
+            <label for="test-input2">label</label>
+            <textarea id="test-input2"></textarea>
+        </div>
+
+        <div class="form-group">
+            <input type="checkbox" id="testCheckbox" value="testCheckbox" />
+            <label for="testCheckbox">Test Checkbox</label>
+        </div>
+
+        <div class="form-group">
+            <label for="test-input3">label</label>
+            <select id="test-input3">
+                <option value="Option 1">Option 1</option>
+                <option value="Option 2">Option 2</option>
+                <option value="Option 3">Option 3</option>
+                <option value="Option 4">Option 4</option>
+                <option value="Option 5">Option 5</option>
+                <option value="Option length">
+                    Option that has too long of a value to fit
+                </option>
+            </select>
+        </div>
+
+        <fieldset>
+            <legend>inline checkboxes</legend>
+
+            <div class="form-group">
+                <div class="form-check-inline">
+                    <input type="checkbox" id="inlineCheckbox1" value="option1" />
+                    <label for="inlineCheckbox1">1</label>
+                </div>
+                <div class="form-check-inline">
+                    <input type="checkbox" id="inlineCheckbox2" value="option2" />
+                    <label for="inlineCheckbox2">2</label>
+                </div>
+                <div class="form-check-inline">
+                    <input type="checkbox" id="inlineCheckbox3" value="option3" disabled />
+                    <label for="inlineCheckbox3">3 (disabled)</label>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>inline radios</legend>
+
+            <div class="form-group">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="inlineRadio1" value="option1" name="inlineRadio" />
+                    <label class="form-check-label" for="inlineRadio1">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="inlineRadio2" value="option2" name="inlineRadio" />
+                    <label class="form-check-label" for="inlineRadio2">2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="inlineRadio3" value="option3" name="inlineRadio" disabled />
+                    <label class="form-check-label" for="inlineRadio3">3 (disabled)</label>
+                </div>
+            </div>
+        </fieldset>
+    </fieldset>
+
+    <h3>pifa Forms</h3>
 
     <h2>Mobile</h2>
 
@@ -194,7 +270,7 @@
 </div>
 
 <footer>
-    this is a footer
+    <span>Made with &hearts; by <a href="https://github.com/tdascoli" target="_blank">@tdascoli</a></span>
 </footer>
 
 <script src="script/main.js"></script>

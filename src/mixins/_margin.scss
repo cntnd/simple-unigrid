@@ -26,6 +26,24 @@
   margin-left: #{ $margin-rem + 'rem'};
 }
 
+// Margin-left
+@mixin margin-left($number) {
+  $margin: $number * $leading;
+  $margin-rem: $number * $leading-rem;
+
+  margin-left: #{ $margin + 'px'};
+  margin-left: #{ $margin-rem + 'rem'};
+}
+
+// Margin-right
+@mixin margin-right($number) {
+  $margin: $number * $leading;
+  $margin-rem: $number * $leading-rem;
+
+  margin-right: #{ $margin + 'px'};
+  margin-right: #{ $margin-rem + 'rem'};
+}
+
 // Margin-vertical
 @mixin margin-vertical($number, $half:true) {
   $margin: $number * $leading;

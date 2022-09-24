@@ -1,3 +1,131 @@
-input {
+/* form */
+$fieldset-color: $color-font-body;
 
+fieldset {
+  @include padding-equal(.5);
+
+  box-sizing: border-box;
+  box-shadow:0 0 0 1px $fieldset-color inset;
+
+  legend {
+    @include padding-equal(.5);
+    @include line-height(1);
+
+    margin: 0;
+    background: white;
+  }
+}
+
+.form-group {
+  @include margin-vertical(.5);
+
+  label {
+    @include line-height(1);
+    display: block;
+  }
+
+  input,
+  textarea,
+  select {
+    @include padding(0, .25);
+
+    width: 100%;
+
+    font-family: inherit;
+    font-size: inherit;
+  }
+
+  input:not([type=checkbox]):not([type=radio]),
+  textarea,
+  select {
+    border: 0;
+    box-sizing: border-box;
+    box-shadow: 0 0 0 2px $fieldset-color inset;
+  }
+
+  select {
+    width: 100% !important;
+    @include height(1);
+  }
+
+  .form-text {
+    @include line-height(1);
+  }
+
+  >input[type=checkbox] {
+    width: auto;
+    @include margin-right(.25);
+
+    & + label {
+      display: inline-block;
+    }
+  }
+
+  .form-check-inline {
+    display: inline-flex;
+
+    @include margin-right(.5);
+
+    input {
+      width: auto;
+      margin-top: 0;
+      @include margin-right(.25);
+    }
+
+    label {
+      width: auto;
+    }
+  }
+}
+
+@media screen and (min-width: #{ $max-width + 5 + 'em'}) {
+  $leading: $leading-desktop;
+  $leading-rem: $leading-rem-desktop;
+
+  @import '../mixins/padding';
+  @import '../mixins/margin';
+  @import '../mixins/line-height';
+
+  fieldset {
+    @include padding-equal(.5);
+    @include line-height(1);
+
+    legend {
+      @include line-height(1);
+    }
+  }
+
+  .form-group {
+    @include margin-vertical(.5);
+
+    label {
+      @include line-height(1);
+    }
+
+    input,
+    textarea,
+    select {
+      @include padding(0, .25);
+    }
+
+    select {
+      @include height(1);
+    }
+
+    .form-text {
+      @include line-height(1);
+    }
+
+    >input[type=checkbox] {
+      @include margin-right(.25);
+    }
+
+    .form-check-inline {
+      @include margin-right(.5);
+
+      input {
+        @include margin-right(.25);
+      }
+    }
+  }
 }

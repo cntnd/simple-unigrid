@@ -1,0 +1,5 @@
+// Height
+@mixin height($number) {
+  height: #{ $number * $leading + 'px'};
+  height: #{ $number * $leading-rem + 'rem'};
+}
