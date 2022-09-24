@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="simple-unigrid.css">
 
     <title>Unigrid</title>
@@ -22,13 +21,176 @@
 </header>
 
 <div class="jumbotron">
-    this is a jumbotron
+    <h1>Simple Unigrid is a CSS grid for your website.</h1>
+    <p>Responsive, light, simple.</p>
 </div>
 
 <div class="container">
-    <h1>Heading 1</h1>
-    <h4>Heading 4</h4>
-    <p>Text<br />Text</p>
+
+    <h2>Simple Grid</h2>
+
+    <div class="grid-display">
+        <div class="unigrid-row">
+            <div class="brick--1"><p>brick--1</p></div>
+            <div class="brick--11"><p>brick--11</p></div>
+        </div>
+
+        <div class="unigrid-row">
+            <div class="brick--2"><p>brick--2</p></div>
+            <div class="brick--10"><p>brick--10</div>
+        </div>
+
+        <div class="unigrid-row">
+            <div class="brick--3"><p>brick--3</p></div>
+            <div class="brick--9"><p>brick--9</p></div>
+        </div>
+
+        <div class="unigrid-row">
+            <div class="brick--4"><p>brick--4</p></div>
+            <div class="brick--8"><p>brick--8</p></div>
+        </div>
+
+        <div class="unigrid-row">
+            <div class="brick--5"><p>brick--5</p></div>
+            <div class="brick--7"><p>brick--7</p></div>
+        </div>
+
+        <div class="unigrid-row">
+            <div class="brick--6"><p>brick--6</p></div>
+            <div class="brick--6"><p>brick--6</p></div>
+        </div>
+
+        <div class="unigrid-row">
+            <div class="brick--7"><p>brick--7</p></div>
+            <div class="brick--5"><p>brick--5</p></div>
+        </div>
+
+        <div class="unigrid-row">
+            <div class="brick--8"><p>brick--8</p></div>
+            <div class="brick--4"><p>brick--4</p></div>
+        </div>
+
+        <div class="unigrid-row">
+            <div class="brick--9"><p>brick--9</p></div>
+            <div class="brick--3"><p>brick--3</p></div>
+        </div>
+
+        <div class="unigrid-row">
+            <div class="brick--10"><p>brick--10</div>
+            <div class="brick--2"><p>brick--2</p></div>
+        </div>
+
+        <div class="unigrid-row">
+            <div class="brick--11"><p>brick--11</p></div>
+            <div class="brick--1"><p>brick--1</p></div>
+        </div>
+
+        <hr />
+
+        <div class="unigrid-row">
+            <div class="brick--2"><p>brick--2</p></div>
+            <div class="brick--2"><p>brick--2</p></div>
+            <div class="brick--2"><p>brick--2</p></div>
+            <div class="brick--2"><p>brick--2</p></div>
+            <div class="brick--2"><p>brick--2</p></div>
+            <div class="brick--2"><p>brick--2</p></div>
+        </div>
+
+        <div class="unigrid-row">
+            <div class="brick--3"><p>brick--3</p></div>
+            <div class="brick--3"><p>brick--3</p></div>
+            <div class="brick--3"><p>brick--3</p></div>
+            <div class="brick--3"><p>brick--3</p></div>
+        </div>
+
+        <div class="unigrid-row">
+            <div class="brick--4">
+                <p>brick--4</p>
+            </div>
+
+            <div class="brick--4">
+                <p>brick--4</p>
+            </div>
+
+            <div class="brick--4">
+                <p>brick--4</p>
+            </div>
+        </div>
+
+        <div class="unigrid-row">
+            <div class="brick--6"><p>brick--6</p></div>
+            <div class="brick--6"><p>brick--6</p></div>
+        </div>
+
+        <div class="unigrid-row">
+            <div class="brick--12"><p>brick--12</p></div>
+        </div>
+    </div>
+
+    <h2>wrap</h2>
+
+    <div class="grid-display">
+        <div class="unigrid-row wrap">
+            <div class="brick--12"><p>brick--12</p></div>
+
+            <div class="brick--12"><p>brick--12</p></div>
+        </div>
+    </div>
+
+
+    <h2>Simple Code</h2>
+
+    <p>All the code you need is simple and familiar. Simply state the number of columns you want your content to occupy
+        in the .brick class. For example, if you want your content to take up 8 columns (out of 12), simply give your
+        content the class .brick--8.</p>
+    <p>Simple grid is built mobile-first, so all columns will expand to the full container width on smaller screens. If
+        you don’t want columns to expand on mobile devices and small screens, simply add --sm to the end of your column
+        class name. For example, if you want to have two blocks of content floating side-by-side on small screens, each
+        would be given the class name .brick--6--sm.</p>
+    <p>Be sure to nest columns within a .unigrid-row class. You may also choose to nest rows within a .container class.</p>
+
+    <pre>
+        <code class="language-html">
+&#x3C;div class=&#x22;unigrid-row&#x22;&#x3E;
+    &#x3C;div class=&#x22;brick--4&#x22;&#x3E;
+        &#x3C;p&#x3E;brick--4&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+
+    &#x3C;div class=&#x22;brick--4&#x22;&#x3E;
+        &#x3C;p&#x3E;brick--4&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+
+    &#x3C;div class=&#x22;brick--4&#x22;&#x3E;
+        &#x3C;p&#x3E;brick--4&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+        </code>
+    </pre>
+
+    <h2>Simple Typography</h2>
+
+    <p>Simple Grid uses Inter from rsms.me as a base font-family. Font-size is based on root rem units.</p>
+
+    <h1>Header 1</h1>
+    <h2>Header 2</h2>
+    <h3>Header 3</h3>
+    <h4>Header 4</h4>
+    <h5>Header 5</h5>
+    <h6>Header 6</h6>
+
+    <h2>Simple Forms</h2>
+
+    <h2>Mobile</h2>
+
+    <div class="hidden--desktop">
+        <p>This is shown on Mobile and hidden on Desktop</p>
+    </div>
+
+    <div class="hidden--sm">
+        <p>This is shown on Desktop and hidden on Mobile</p>
+    </div>
+
+</div>
 </div>
 
 <footer>
@@ -36,6 +198,11 @@
 </footer>
 
 <script src="script/main.js"></script>
+
+<!-- highlight -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/styles/default.min.css">
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
 
 </body>
 </html>

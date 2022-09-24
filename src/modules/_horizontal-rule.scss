@@ -1,0 +1,30 @@
+// Horizontal rule
+$hr-color: $color-font-body;
+$hr-height: 1; // [ 2 ] — In pixels, only for line style
+$hr-width: null;
+
+hr {
+  @include margin-top(1);
+  @include margin-bottom(1);
+  margin-right: auto;
+  margin-left: auto;
+
+  border: 0;
+  border-top: 1px solid $hr-color;
+
+  @if $hr-width == null {
+    width: 100%;
+  } @else {
+    width: #{$hr-width + 'px'};
+  }
+
+  @media screen and (min-width: #{ $max-width + 5 + 'em'}) {
+    $leading: $leading-desktop;
+    $leading-rem: $leading-rem-desktop;
+
+    @import '../mixins/margin';
+
+    @include margin-top(1);
+    @include margin-bottom(1);
+  }
+}

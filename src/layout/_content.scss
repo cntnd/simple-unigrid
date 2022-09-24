@@ -1,0 +1,32 @@
+// Content
+
+.container {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include padding(0,.5);
+
+  @media only screen and (min-width: $breakpoint-small) {
+    $leading: $leading-desktop;
+    $leading-rem: $leading-rem-desktop;
+
+    @import '../mixins/padding';
+
+    @include padding(0,.5);
+
+    width: 85%;
+  }
+
+  @media only screen and (min-width: $breakpoint-large) {
+    $leading: $leading-desktop;
+    $leading-rem: $leading-rem-desktop;
+
+    @import '../mixins/padding';
+
+    @include padding(0,.5);
+
+    width: 80%;
+    max-width: 60rem;
+  }
+}

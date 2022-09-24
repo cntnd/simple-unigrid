@@ -10,6 +10,22 @@
   margin-bottom: #{ $number * $leading-rem + 'rem'};
 }
 
+// Margin-left
+@mixin margin-horizontal($number, $half:true) {
+  $margin: $number * $leading;
+  $margin-rem: $number * $leading-rem;
+  @if $half {
+    $margin: $margin / 2;
+    $margin-rem: $margin-rem / 2;
+  }
+
+  margin-right: #{ $margin + 'px'};
+  margin-right: #{ $margin-rem + 'rem'};
+
+  margin-left: #{ $margin + 'px'};
+  margin-left: #{ $margin-rem + 'rem'};
+}
+
 // Margin
 @mixin margin($top, $right, $bottom:null, $left:null) {
   @if $left == null and $bottom == null {

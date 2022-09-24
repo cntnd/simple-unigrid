@@ -1,0 +1,74 @@
+// Brick Grid
+
+.unigrid-row {
+  display: flex;
+
+  @include margin($brick-margin-vertical, $brick-margin-horizontal);
+
+  [class^="brick"]:first-child,
+  [class^="brick"].first {
+    margin-left: 0;
+  }
+
+  [class^="brick"]:last-child,
+  [class^="brick"].last {
+    margin-right: 0;
+  }
+
+  &.wrap {
+    flex-wrap: wrap;
+    margin-bottom: 0;
+
+    [class^="brick"] {
+      @include margin-bottom($brick-margin-vertical);
+    }
+  }
+}
+
+[class^="brick"] p {
+  margin: 0;
+}
+
+@for $i from 1 through $brick-size {
+  $width: ($brick-width / 12) * $i;
+  $margin: #{ $leading + 'px'};
+  $margin-rem: #{ $leading-rem + 'rem'};
+
+  .brick--#{$i} {
+    @include brick-width($i);
+    @include margin-horizontal(1);
+    @include padding(0, $brick-padding);
+  }
+}
+
+@media screen and (min-width: #{ $max-width + 5 + 'em'}) {
+  $leading: $leading-desktop;
+  $leading-rem: $leading-rem-desktop;
+
+  @import 'src/mixins/brick-width';
+  @import 'src/mixins/padding';
+  @import 'src/mixins/margin';
+  @import 'src/mixins/line-height';
+
+  .unigrid-row {
+    @include margin($brick-margin-vertical, $brick-margin-horizontal);
+
+    &.wrap {
+      [class^="brick"] {
+        @include margin-bottom($brick-margin-vertical);
+      }
+    }
+  }
+
+  @for $i from 1 through $brick-size {
+    $width: ($brick-width / 12) * $i;
+    $margin: #{ $leading + 'px'};
+    $margin-rem: #{ $leading-rem + 'rem'};
+
+    .brick--#{$i} {
+      @include brick-width($i);
+      @include margin-horizontal(1);
+      @include padding(0, $brick-padding);
+    }
+  }
+}

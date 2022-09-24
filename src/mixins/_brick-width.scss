@@ -1,0 +1,5 @@
+// brick-width
+@mixin brick-width($number) {
+  $width: ($brick-width / 12) * $number;
+  width: #{$width};
+}

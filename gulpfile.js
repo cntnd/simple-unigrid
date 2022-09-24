@@ -2,6 +2,7 @@ var gulp        = require('gulp'),
     sass        = require('gulp-sass'),
     minify      = require('gulp-minifier'),
     zip         = require('gulp-zip'),
+    inject      = require('gulp-inject'),
     browserSync = require('browser-sync'),
     del         = require('del');
 

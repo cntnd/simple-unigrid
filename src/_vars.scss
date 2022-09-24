@@ -27,6 +27,9 @@ $breakpoint-large: 60em; // 960px
 
 $edit-mode: true !default; // [ true / false ] - Enables/disables the grid toggle button.
 
+// Paragraph indenting
+$paragraph-indent: false; // [ true / false ]
+
 // Modular Scale
 // todo goldener schnitt??
 $modular-scale: (
@@ -73,3 +76,10 @@ $base-desktop: 16 * ($base-font-size-desktop / 100);
 $leading-desktop: round($base-desktop * $line-height-desktop);
 $leading-rem-desktop: $leading-desktop / $base-desktop;
 
+// Brick Grid
+$brick-width: 100%;
+$brick-gutter: $leading-rem;
+$brick-size: 12;
+$brick-padding: .25;
+$brick-margin-vertical: .5;
+$brick-margin-horizontal: 0;

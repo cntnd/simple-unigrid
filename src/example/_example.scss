@@ -1,0 +1,17 @@
+// EXAMPLE
+
+@if $edit-mode == true {
+
+  .grid-display [class^="brick"]{
+    background: #D5CFAC;
+    box-sizing: border-box;
+    text-align: center;
+    box-shadow:0 0 0 1px #CA4D2F inset;
+  }
+
+  .grid-display [class^="brick"] p{
+    color: black;
+    font-size: .5rem;
+  }
+
+}
