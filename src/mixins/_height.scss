@@ -1,5 +1,18 @@
 // Height
-@mixin height($number) {
-  height: #{ $number * $leading + 'px'};
-  height: #{ $number * $leading-rem + 'rem'};
+@mixin height($number,$is-important:false,$min-height:false,$max-height:false) {
+  $important: '';
+  @if $is-important {
+    $important: ' !important';
+  }
+
+  height: #{ $number * $leading + 'px'+ $important};
+  height: #{ $number * $leading-rem + 'rem'+ $important};
+  @if $min-height {
+    min-height: #{ $number * $leading + 'px'+ $important};
+    min-height: #{ $number * $leading-rem + 'rem'+ $important};
+  }
+  @if $max-height {
+    max-height: #{ $number * $leading + 'px'+ $important};
+    max-height: #{ $number * $leading-rem + 'rem'+ $important};
+  }
 }

@@ -1,0 +1,13 @@
+/* header */
+.header [class^="brick"] {
+    height: 100%;
+}
+.logo-header {
+    display: block;
+    margin-left: 0 !important;
+    margin-top: auto;
+}
+.logo-header img {
+    max-width: 100%;
+    height: auto;
+}

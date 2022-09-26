@@ -1,32 +1,22 @@
 // Content
+// todo
 
 .container {
   width: 95%;
   margin-left: auto;
   margin-right: auto;
 
-  @include padding(0,.5);
+  @include padding(0, .5);
 
-  @media only screen and (min-width: $breakpoint-small) {
+  @media screen and (min-width: #{ $max-width + 5 + 'em'}) {
     $leading: $leading-desktop;
     $leading-rem: $leading-rem-desktop;
 
     @import '../mixins/padding';
 
-    @include padding(0,.5);
+    @include padding(0, .5);
 
     width: 85%;
-  }
-
-  @media only screen and (min-width: $breakpoint-large) {
-    $leading: $leading-desktop;
-    $leading-rem: $leading-rem-desktop;
-
-    @import '../mixins/padding';
-
-    @include padding(0,.5);
-
-    width: 80%;
-    max-width: 60rem;
+    max-width: 1280px;
   }
 }

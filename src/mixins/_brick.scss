@@ -1,28 +1,61 @@
 // brick-width
-@mixin brick-width($number, $half:false) {
+@mixin brick-width($number) {
   $width: ($brick-width / $brick-size) * $number;
-  $margin: $leading;
-  $margin-rem: $leading-rem;
-  @if $half {
-    $margin: $margin / 2;
-    $margin-rem: $margin-rem / 2;
+
+  width: calc(#{$width} - var(--grid-gutter-x));
+
+  @include brick-margin();
+}
+
+@mixin brick-margin($row:false) {
+  $multiplier: 0.5;
+  @if $row {
+    $multiplier: -$multiplier;
   }
 
-  width: calc(#{$width} - #{$margin + 'px'});
-  width: calc(#{$width} - #{$margin-rem + 'rem'});
+  margin-right: calc(var(--grid-gutter-x) * #{$multiplier});
+  margin-left: calc(var(--grid-gutter-x) * #{$multiplier});
+}
+
+@mixin brick-padding() {
+  $padding-x: calc(#{$leading-rem + 'rem'} * var(--grid-padding-x));
+  $padding-y: calc(#{$leading-rem + 'rem'} * var(--grid-padding-y));
+
+  padding: $padding-y $padding-x ;
+}
+
+@mixin brick-padding-horizontal($number) {
+  --grid-padding-x: #{$number};
+}
+
+@mixin brick-padding-vertical($number) {
+  --grid-padding-y: #{$number};
 }
 
 @mixin brick-spacing($number,$prepend:true) {
   $width: ($brick-width / $brick-size) * $number;
-  $margin: $leading;
-  $margin-rem: $leading-rem;
 
   @if $prepend {
-    margin-left: calc(#{$width} + #{$margin + 'px'}) !important;
-    margin-left: calc(#{$width} + #{$margin-rem + 'rem'}) !important;
+    margin-left: calc(#{$width} + var(--grid-gutter-x)) !important;
+  } @else {
+    margin-right: calc(#{$width} + var(--grid-gutter-x)) !important;
   }
-  @else {
-    margin-right: calc(#{$width} + #{$margin + 'px'}) !important;
-    margin-right: calc(#{$width} + #{$margin-rem + 'rem'}) !important;
+}
+
+@mixin brick-gutter-horizontal($number) {
+  $gutter: ($brick-gutter-horizontal * $number) / 2;
+  $type: 'rem';
+  @if $brick-gutter-horizontal-type == 'px' {
+    $type: 'px';
   }
+  --grid-gutter-x: #{$gutter + $type};
+}
+
+@mixin brick-gutter-vertical($number) {
+  $gutter: ($brick-gutter-vertical * $number) / 2;
+  $type: 'rem';
+  @if $brick-gutter-vertical-type == 'px' {
+    $type: 'px';
+  }
+  --grid-gutter-y: #{$gutter + $type};
 }

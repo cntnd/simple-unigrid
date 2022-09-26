@@ -1,37 +1,37 @@
 // Brick Grid
+:root {
+  --grid-gutter-x: 0rem;
+  --grid-gutter-y: 0rem;
+  --grid-padding-x: #{$brick-padding-horizontal};
+  --grid-padding-y: #{$brick-padding-vertical};
+}
 
 .unigrid-row {
   display: flex;
   flex-wrap: wrap;
 
-  @include margin-horizontal($row-margin-horizontal);
-  @include margin-vertical($row-margin-vertical, false);
+  @include row-margin();
 
-  [class^="brick"]:first-child {
-    margin-top: 0;
+  [class^="brick"]:last-child {
+    margin-bottom: 0;
   }
-}
-
-[class^="brick"] p {
-  margin: 0;
 }
 
 @for $i from 1 through $brick-size {
   .brick--#{$i} {
     width: 100%;
-    @include margin-top($brick-margin-vertical);
-    @include margin-horizontal($brick-margin-horizontal);
-    @include padding(0, $brick-padding);
+    @include brick-padding();
+    @include brick-margin();
+    @include row-margin-bottom();
   }
 }
 
 @for $i from 1 through $brick-size {
   .brick-sm--#{$i} {
+    @include brick-padding();
     @include brick-width($i);
-    @include margin-horizontal($brick-margin-horizontal);
     margin-top: 0;
     margin-bottom: 0;
-    @include padding(0, $brick-padding);
   }
 }
 
@@ -42,35 +42,28 @@
 
   @import 'src/mixins/brick';
   @import 'src/mixins/padding';
-  @import 'src/mixins/margin';
-  @import 'src/mixins/line-height';
+  @import 'src/mixins/row';
 
   .unigrid-row {
     flex-wrap: nowrap;
 
-    @include margin-horizontal($row-margin-horizontal);
-    @include margin-vertical($row-margin-vertical, false);
+    @include row-margin();
 
     &.wrap {
       flex-wrap: wrap;
 
       [class^="brick"] {
-        @include margin-bottom($row-margin-vertical);
+        @include row-margin-bottom();
       }
     }
   }
 
   @for $i from 1 through $brick-size {
-    $width: ($brick-width / $brick-size) * $i;
-    $margin: #{ $leading + 'px'};
-    $margin-rem: #{ $leading-rem + 'rem'};
-
     .brick--#{$i} {
+      @include brick-padding();
       @include brick-width($i);
-      @include margin-horizontal($brick-margin-horizontal);
       margin-top: 0;
       margin-bottom: 0;
-      @include padding(0, $brick-padding);
     }
   }
 }

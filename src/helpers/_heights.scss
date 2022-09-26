@@ -1,0 +1,89 @@
+/* height helpers */
+
+.h-auto {
+  height: auto !important;
+}
+.mh-auto {
+  min-height: auto !important;
+}
+
+.h-half {
+  @include height(.5, true);
+}
+.mh-half {
+  @include height(.5, true, true);
+}
+.maxh-half {
+  @include height(.5, true, false, true);
+}
+
+@for $i from 1 through $brick-size {
+  $half: $i + 0.5;
+  
+  .h-#{$i} {
+    @include height($i, true);
+  }
+  .mh-#{$i} {
+    @include height($i, true, true);
+  }
+  .maxh-#{$i} {
+    @include height($i, true, false, true);
+  }
+
+  // half
+  @if $i < $brick-size {
+    .h-#{$i}_half {
+      @include height($half, true);
+    }
+    .mh-#{$i}_half {
+      @include height($half, true, true);
+    }
+    .maxh-#{$i}_half {
+      @include height($half, true, false, true);
+    }
+  }
+}
+
+@media screen and (min-width: #{ $max-width + 5 + 'em'}) {
+  $leading: $leading-desktop;
+  $leading-rem: $leading-rem-desktop;
+
+  @import '../mixins/height';
+
+  .h-half {
+    @include height(.5, true);
+  }
+  .mh-half {
+    @include height(.5, true, true);
+  }
+  .maxh-half {
+    @include height(.5, true, false, true);
+  }
+
+  @for $i from 1 through $brick-size {
+    $half: $i + 0.5;
+
+    .h-#{$i} {
+      @include height($i, true);
+    }
+    .mh-#{$i} {
+      @include height($i, true, true);
+    }
+    .maxh-#{$i} {
+      @include height($i, true, false, true);
+    }
+
+    // half
+    @if $i < $brick-size {
+      .h-#{$i}_half {
+        @include height($half, true);
+      }
+      .mh-#{$i}_half {
+        @include height($half, true, true);
+      }
+      .maxh-#{$i}_half {
+        @include height($half, true, false, true);
+      }
+    }
+  }
+}

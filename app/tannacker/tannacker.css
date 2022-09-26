@@ -1,0 +1,370 @@
+/* DATEI: layout.css */
+@import url("http://fast.fonts.net/lt/1.css?apiType=css&c=ca99c136-a899-430b-84fc-2564c50cf22d&fontids=1296813,1296815,1296816,1296820,1296821");
+
+@font-face {
+    font-family: "Zurich"; /* Zurich W03 Cnd Bd */
+    src: url("Fonts/1296813/f77b499d-08ee-4731-a1fe-9f7746af8b85.eot?#iefix");
+    src: url("Fonts/1296813/f77b499d-08ee-4731-a1fe-9f7746af8b85.eot?#iefix") format("eot"), url("Fonts/1296813/6e3403e7-a0a5-49a6-b134-1468ab3fa85c.woff2") format("woff2"), url("Fonts/1296813/24624356-f5dd-4293-9a6a-454e9aaa05ef.woff") format("woff"), url("Fonts/1296813/59ecc5a0-fdcd-4992-b648-964121a1a5ad.ttf") format("truetype"), url("Fonts/1296813/f297624f-294e-48f2-b2d7-99a31db8a083.svg#f297624f-294e-48f2-b2d7-99a31db8a083") format("svg");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Zurich"; /* Zurich W03 Cnd */
+    src: url("Fonts/1296816/f2e2f731-5128-4af0-a4ee-bbf57cfb4c36.eot?#iefix");
+    src: url("Fonts/1296816/f2e2f731-5128-4af0-a4ee-bbf57cfb4c36.eot?#iefix") format("eot"), url("Fonts/1296816/6c011f98-2af7-45e3-bc42-1f71af07cec3.woff2") format("woff2"), url("Fonts/1296816/91838950-2a01-474c-ade6-0baafac7e01a.woff") format("woff"), url("Fonts/1296816/f12d866b-dd26-49f6-924a-4ce79b1404f6.ttf") format("truetype"), url("Fonts/1296816/fb2248c0-b81f-4d7e-b705-1f9ebdc55f4d.svg#fb2248c0-b81f-4d7e-b705-1f9ebdc55f4d") format("svg");
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Zurich"; /* Zurich W03 Cnd It */
+    src: url("Fonts/1296815/e90f4310-805d-422a-a49b-26720d97431d.eot?#iefix");
+    src: url("Fonts/1296815/e90f4310-805d-422a-a49b-26720d97431d.eot?#iefix") format("eot"), url("Fonts/1296815/5b5a7fae-e6fb-4178-8744-b98d26a3650d.woff2") format("woff2"), url("Fonts/1296815/be932894-524c-4bee-b911-135f8f3a5322.woff") format("woff"), url("Fonts/1296815/4df64ddb-6034-4e7c-b319-b378f16d7c98.ttf") format("truetype"), url("Fonts/1296815/15489f94-9c05-4036-9cdc-ed40408c2636.svg#15489f94-9c05-4036-9cdc-ed40408c2636") format("svg");
+    font-style: italic;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Zurich"; /* Zurich W03 Light Cnd */
+    src: url("Fonts/1296820/a541d2b9-2639-4b6a-b2b4-2a89426caf34.eot?#iefix");
+    src: url("Fonts/1296820/a541d2b9-2639-4b6a-b2b4-2a89426caf34.eot?#iefix") format("eot"), url("Fonts/1296820/33a413f7-f6c5-4a87-9d6a-0c6267c21174.woff2") format("woff2"), url("Fonts/1296820/d0d28278-55f3-495c-9cf3-a58b2fc71c02.woff") format("woff"), url("Fonts/1296820/8360bfb2-b0ea-441e-afbd-2b8262277cb4.ttf") format("truetype"), url("Fonts/1296820/82727ea1-2d37-4247-b722-9b5d469844ef.svg#82727ea1-2d37-4247-b722-9b5d469844ef") format("svg");
+    font-style: normal;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Zurich"; /* Zurich W03 Light Cnd It */
+    src: url("Fonts/1296821/20057c78-ed01-49bd-8d57-7b6bdb1ffda9.eot?#iefix");
+    src: url("Fonts/1296821/20057c78-ed01-49bd-8d57-7b6bdb1ffda9.eot?#iefix") format("eot"), url("Fonts/1296821/ee1a75a2-edd1-4da7-85eb-f0fd568a722b.woff2") format("woff2"), url("Fonts/1296821/3a3a4b42-e832-484f-8b4d-c4070d19a62f.woff") format("woff"), url("Fonts/1296821/38dffab5-6b03-44bd-b48a-1fce9c2469b7.ttf") format("truetype"), url("Fonts/1296821/2e8fa2b1-41b9-4151-adea-2e27aa44b19b.svg#2e8fa2b1-41b9-4151-adea-2e27aa44b19b") format("svg");
+    font-style: italic;
+    font-weight: 300;
+}
+
+html {
+    overflow-y: scroll; /* permanenter scrollbalkenbereich, um ein hin- und herspringen der site zu verhindern */
+
+    font-family: 'Zurich', Helvetica, Arial, sans-serif; /* font-weight: 300 = light, 400 = normal, 500 = medium, 700 = bold */
+    font-size: 1.1em;
+    font-weight: 300;
+    font-style: normal;
+    text-transform: none;
+    text-decoration: none;
+    color: #000;
+    letter-spacing: 0.1em;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+}
+
+/* typography */
+h1 {
+    font-family: 'Zurich', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 2.1em;
+    line-height: 1.1;
+    color: rgb(0, 0, 0);
+    letter-spacing: 0.1em;
+    margin: 0 0 10px 0;
+    text-transform: none;
+}
+
+h2 {
+    font-family: 'Zurich', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 1.6em;
+    line-height: 1.1;
+    color: rgb(0, 0, 0);
+    letter-spacing: 0.1em;
+    margin: 40px 0 10px 0;
+    text-transform: none;
+}
+
+h3 {
+    font-family: 'Zurich', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 1.6em;
+    line-height: 1.1;
+    color: rgb(0, 0, 0);
+    letter-spacing: 0.1em;
+    margin: 0 0 10px 0;
+    text-transform: none;
+}
+
+h4 {
+    font-family: 'Zurich', Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 1.8em;
+    line-height: 1.1;
+    color: rgb(0, 0, 0);
+    letter-spacing: 0.1em;
+    margin: 0 0 5px 0;
+    text-transform: none;
+}
+
+h5 {
+    font-family: 'Zurich', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 1.4em;
+    line-height: 1.1;
+    color: rgb(0, 0, 0);
+    letter-spacing: 0.1em;
+    margin: 20px 0 10px 0;
+    text-transform: none;
+}
+
+h6 {
+    font-family: 'Zurich', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 1.2em;
+    line-height: 1.1;
+    color: rgb(0, 0, 0);
+    letter-spacing: 0.1em;
+    margin: 5px 0 5px 0;
+    text-transform: none;
+}
+
+h1 img, h2 img, h3 img, h4 img, h5 img, h6 img {
+    margin: 0;
+}
+
+.eng {
+    letter-spacing: 0;
+}
+
+/* hyperlinks-elemente */
+a:link {
+    color: rgb(0, 0, 187);
+    font-weight: 300;
+    text-decoration: none;
+    font-size: 1em;
+    font-style: normal;
+    line-height: 1.2em;
+    border: 0;
+}
+
+a:visited {
+    color: rgb(0, 0, 187);
+    font-weight: 300;
+    text-decoration: none;
+    font-size: 1em;
+    font-style: normal;
+    line-height: 1.2em;
+    border: 0;
+}
+
+a:active {
+    color: #6CB6E3;
+    font-weight: 300;
+    text-decoration: none;
+    font-size: 1em;
+    font-style: normal;
+    line-height: 1.2em;
+    border: 0;
+}
+
+a:hover {
+    color: #6CB6E3;
+    font-weight: 300;
+    text-decoration: none;
+    font-size: 1em;
+    font-style: normal;
+    line-height: 1.2em;
+    border: 0;
+}
+
+/* background */
+.hin {
+    position: absolute;
+    z-index: -1;
+    overflow: hidden;
+    background: url(galerie-startseite/eingang-wohnbereich-01.jpg) 0 93px / contain no-repeat scroll padding-box border-box rgb(255, 255, 255);
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.bgweiss {
+    background-color: rgb(255, 255, 255);
+}
+
+.bgweiss-transparent {
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+.bginfo {
+    background-color: rgb(148, 196, 242);
+}
+
+.bginstitution {
+    background-color: rgb(164, 206, 221);
+}
+
+.bgstandorte {
+    background-color: rgb(180, 216, 200);
+}
+
+.bgwohnen {
+    background-color: rgb(200, 170, 235);
+}
+
+.bgarbeit {
+    background-color: rgb(180, 165, 230);
+}
+
+.bggesundheit {
+    background-color: rgb(165, 165, 230);
+}
+
+.bgleicht {
+    background-color: rgb(230, 210, 120);
+}
+
+.bgaktuell {
+    background-color: rgb(235, 200, 180);
+}
+
+.bgschwarz {
+    background-color: rgb(0, 0, 0);
+}
+
+.bgorange {
+    background-color: rgb(231, 62, 17);
+}
+
+.bgblau {
+    background-color: rgba(234, 246, 254, 0.85);
+}
+
+.bgblau-transparent {
+    background-color: rgba(205, 234, 252, 0.5);
+}
+
+.bggrau {
+    background-color: #cccccc;
+}
+
+/* header */
+.header {
+    background-color: rgb(255, 255, 255);
+}
+
+.header [class^="brick"] {
+    align-self: end;
+}
+
+.sitemap > .hamburger {
+    margin: 12px 0;
+}
+
+.sitemap > .hamburger .line {
+    background-color: #0066A4;
+    width: 32px;
+    margin: 3px auto;
+}
+
+.sitemap > .hamburger:hover .line {
+    background-color: #9AC4F2;
+}
+
+/* content */
+.content {
+    background-color: rgb(255, 255, 255);
+}
+
+/* subnavigation */
+.subnavigation {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.subnavigation .contact {
+    position: absolute;
+    bottom: 0;
+}
+
+a.titel-menuaktiv {
+    font-family: 'Zurich', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+
+    text-align: left;
+    font-size: 2.1em;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+    letter-spacing: 0.1em;
+}
+
+a.titel-menuaktiv:link {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-style: normal;
+}
+
+a.titel-menuaktiv:visited {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-style: normal;
+}
+
+a.titel-menuaktiv:hover {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-style: normal;
+}
+
+a.titel-menuaktiv:active {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-style: normal;
+}
+
+.subnav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a.menulink {
+    font-family		:	'Zurich', Arial, Helvetica, sans-serif;
+    font-weight		:	400;
+    color			: 	rgb(0,0,0);
+    text-align		:	left;
+    font-size		:	1.4em;
+    font-style		:	normal;
+    text-decoration	:	none;
+    text-transform	:	none;
+    letter-spacing	:	0.1em;
+
+}
+a.menulink:link {
+    color			: 	rgb(0,0,0);
+    text-decoration	:	none;
+    font-style		:	normal;
+}
+a.menulink:visited {
+    color			: 	rgb(0,0,0);
+    text-decoration	:	none;
+    font-style		:	normal;
+}
+a.menulink:hover {
+    color			: 	rgb(255,255,255);
+    text-decoration	:	none;
+    font-style		:	normal;
+}
+a.menulink:active {
+    color			: 	rgb(255,255,255);
+    text-decoration	:	none;
+    font-style		:	normal;
+}
+
+/* util */
+.mh700 {
+    min-height: 700px;
+}

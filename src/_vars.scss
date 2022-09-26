@@ -12,14 +12,6 @@ $dark-gray: #333447; // for the Americans
 $header-background: black;
 $header-color: white;
 
-// grid
-$width: 96%;
-$gutter: 4%;
-$breakpoint-small: 33.75em; // 540px
-$breakpoint-med: 45em; // 720px
-$breakpoint-large: 60em; // 960px
-
-
 // gutenberg
 
 /* Configuration
@@ -30,20 +22,10 @@ $edit-mode: true !default; // [ true / false ] - Enables/disables the grid toggl
 // Paragraph indenting
 $paragraph-indent: false; // [ true / false ]
 
-// Modular Scale
-// todo goldener schnitt??
-$modular-scale: (
-        xxxl: 4.3,
-        xxl: 3.5,
-        xl: 3,
-        l: 2.5,
-        m: 2,
-        s: 1.6875,
-        xs: 1.4375,
-        xxs: 1.2,
-        xxxs: 1,
-        xxxxs: 0.8125
-) !default;
+// global width
+$width: 95%;
+$width-desktop: 85%;
+$max-width-desktop: 1280px;
 
 // Colors
 $color-font-body: $dark-grey !default;
@@ -77,13 +59,21 @@ $leading-desktop: round($base-desktop * $line-height-desktop);
 $leading-rem-desktop: $leading-desktop / $base-desktop;
 
 // Brick Grid
+$brick-size: 12;
 $brick-width: 100%;
 $brick-width-desktop: 100%;
-$brick-gutter: $leading-rem;
-$brick-size: 12;
-$brick-padding: .25;
-$brick-margin-vertical: .5;
-$brick-margin-horizontal: 1;
 
-$row-margin-vertical: $brick-margin-vertical;
-$row-margin-horizontal: -1;
+$brick-gutter-horizontal: $leading-rem;
+$brick-gutter-horizontal-desktop: $leading-rem-desktop;
+$brick-gutter-horizontal-type: 'rem';
+$brick-gutter-horizontal-multiplier: .5;
+
+$brick-gutter-vertical: $leading-rem;
+$brick-gutter-vertical-desktop: $leading-rem-desktop;
+$brick-gutter-vertical-type: 'rem';
+$brick-gutter-vertical-multiplier: .5;
+
+$brick-padding-horizontal: .25;
+$brick-padding-horizontal-multiplier: .25;
+$brick-padding-vertical: 0;
+$brick-padding-vertical-multiplier: .25;

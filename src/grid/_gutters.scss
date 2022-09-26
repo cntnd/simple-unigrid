@@ -1,0 +1,159 @@
+/* brick gutters & paddings */
+
+@for $i from 0 through $brick-size {
+  // includes 0 padding and gutters
+  $gutter-horizontal: $i * $brick-gutter-horizontal-multiplier;
+  $gutter-vertical: $i * $brick-gutter-vertical-multiplier;
+
+  $padding-horizontal: $i * $brick-padding-horizontal-multiplier;
+  $padding-vertical: $i * $brick-padding-vertical-multiplier;
+
+  .unigrid-row {
+
+    /* equal gutters */
+    &.g-#{$i} {
+      @include brick-gutter-horizontal($gutter-horizontal);
+      @include brick-gutter-vertical($gutter-vertical);
+    }
+
+    /* horizontal gutters */
+    &.gx-#{$i} {
+      @include brick-gutter-horizontal($gutter-horizontal);
+    }
+
+    /* vertical gutters */
+    &.gy-#{$i} {
+      @include brick-gutter-vertical($gutter-vertical);
+    }
+
+    /* equal paddings */
+    &.brick-p-#{$i} {
+      @include brick-padding-horizontal($padding-horizontal);
+      @include brick-padding-vertical($padding-vertical);
+    }
+
+    /* horizontal paddings */
+    &.brick-px-#{$i} {
+      @include brick-padding-horizontal($padding-horizontal);
+    }
+
+    /* vertical paddings */
+    &.brick-py-#{$i} {
+      @include brick-padding-vertical($padding-vertical);
+    }
+  }
+
+  /* global equal gutters */
+  .unigrid-g-#{$i} {
+    @include brick-gutter-horizontal($gutter-horizontal);
+    @include brick-gutter-vertical($gutter-vertical);
+  }
+
+  /* global horizontal gutters */
+  .unigrid-gx-#{$i} {
+    @include brick-gutter-horizontal($gutter-horizontal);
+  }
+
+  /* global vertical gutters */
+  .unigrid-gy-#{$i} {
+    @include brick-gutter-vertical($gutter-vertical);
+  }
+
+  /* global equal paddings */
+  .unigrid-p-#{$i} {
+    @include brick-padding-horizontal($padding-horizontal);
+    @include brick-padding-vertical($padding-vertical);
+  }
+
+  /* global horizontal paddings */
+  .unigrid-px-#{$i} {
+    @include brick-padding-horizontal($padding-horizontal);
+  }
+
+  /* global vertical paddings */
+  .unigrid-py-#{$i} {
+    @include brick-padding-vertical($padding-vertical);
+  }
+}
+
+@media screen and (min-width: #{ $max-width + 5 + 'em'}) {
+  $brick-gutter-horizontal: $brick-gutter-horizontal-desktop;
+  $brick-gutter-vertical: $brick-gutter-vertical-desktop;
+
+  @import '../mixins/brick';
+
+  @for $i from 1 through $brick-size {
+    $gutter-horizontal: $i * $brick-gutter-horizontal-multiplier;
+    $gutter-vertical: $i * $brick-gutter-vertical-multiplier;
+
+    $padding-horizontal: $i * $brick-padding-horizontal-multiplier;
+    $padding-vertical: $i * $brick-padding-vertical-multiplier;
+
+    .unigrid-row {
+
+      /* equal gutters */
+      &.g-#{$i} {
+        @include brick-gutter-horizontal($gutter-horizontal);
+        @include brick-gutter-vertical($gutter-vertical);
+      }
+
+      /* horizontal gutters */
+      &.gx-#{$i} {
+        @include brick-gutter-horizontal($gutter-horizontal);
+      }
+
+      /* vertical gutters */
+      &.gy-#{$i} {
+        @include brick-gutter-vertical($gutter-vertical);
+      }
+
+      /* equal paddings */
+      &.brick-p-#{$i} {
+        @include brick-padding-horizontal($padding-horizontal);
+        @include brick-padding-vertical($padding-vertical);
+      }
+
+      /* horizontal paddings */
+      &.brick-px-#{$i} {
+        @include brick-padding-horizontal($padding-horizontal);
+      }
+
+      /* vertical paddings */
+      &.brick-py-#{$i} {
+        @include brick-padding-vertical($padding-vertical);
+      }
+    }
+
+    /* global equal gutters */
+    .unigrid-g-#{$i} {
+      @include brick-gutter-horizontal($gutter-horizontal);
+      @include brick-gutter-vertical($gutter-vertical);
+    }
+
+    /* global horizontal gutters */
+    .unigrid-gx-#{$i} {
+      @include brick-gutter-horizontal($gutter-horizontal);
+    }
+
+    /* global vertical gutters */
+    .unigrid-gy-#{$i} {
+      @include brick-gutter-vertical($gutter-vertical);
+    }
+
+    /* global equal paddings */
+    .unigrid-p-#{$i} {
+      @include brick-padding-horizontal($padding-horizontal);
+      @include brick-padding-vertical($padding-vertical);
+    }
+
+    /* global horizontal paddings */
+    .unigrid-px-#{$i} {
+      @include brick-padding-horizontal($padding-horizontal);
+    }
+
+    /* global vertical paddings */
+    .unigrid-py-#{$i} {
+      @include brick-padding-vertical($padding-vertical);
+    }
+  }
+}

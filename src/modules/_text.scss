@@ -74,6 +74,11 @@ p {
   @include line-height(1);
 }
 
+.block p {
+  @include margin-top(.5, true);
+  @include margin-bottom(.5, true);
+}
+
 /* Paragraph
 ========================================================================== */
 

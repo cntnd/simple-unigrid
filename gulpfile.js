@@ -32,7 +32,7 @@ gulp.task('zip', function() {
 
 // Compile sass into CSS
 gulp.task('sass', function() {
-    return gulp.src('src/simple-unigrid.scss')
+    return gulp.src(['src/simple-unigrid.scss','src/unigrid-grid.scss'])
         .pipe(sass())
         .pipe(minify({
           minify: true,
