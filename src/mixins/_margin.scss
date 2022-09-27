@@ -115,3 +115,26 @@
   margin: #{ $number * $leading + 'px' + $important};
   margin: #{ $number * $leading-rem + 'rem' + $important};
 }
+
+@mixin margin-prefix($number,$prefix,$direction,$is-important:false) {
+  $important: '';
+  @if $is-important {
+    $important: ' !important';
+  }
+
+  @if $prefix != '' AND $prefix != 'x' AND $prefix != 'y' {
+    margin-#{$direction}: #{ $number * $leading + 'px' + $important};
+    margin-#{$direction}: #{ $number * $leading-rem + 'rem' + $important};
+  }
+  @else if $prefix == 'x' {
+    @include margin-left($number, $is-important);
+    @include margin-right($number, $is-important);
+  }
+  @else if $prefix == 'y' {
+    @include margin-top($number, $is-important);
+    @include margin-bottom($number, $is-important);
+  }
+  @else {
+    @include margin-equal($number, $is-important);
+  }
+}

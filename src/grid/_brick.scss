@@ -12,7 +12,12 @@
 
   @include row-margin();
 
-  [class^="brick"]:last-child {
+  [class*="brick--"] img {
+    height: auto;
+    max-width: 100%;
+  }
+
+  [class*="brick--"]:last-child {
     margin-bottom: 0;
   }
 }
@@ -20,6 +25,7 @@
 @for $i from 1 through $brick-size {
   .brick--#{$i} {
     width: 100%;
+    box-sizing: border-box;
     @include brick-padding();
     @include brick-margin();
     @include row-margin-bottom();

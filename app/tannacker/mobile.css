@@ -1,7 +1,4 @@
 /* header */
-.header [class^="brick"] {
-    height: 100%;
-}
 .logo-header {
     display: block;
     margin-left: 0 !important;
@@ -10,4 +7,12 @@
 .logo-header img {
     max-width: 100%;
     height: auto;
+}
+
+/* DEV ONLY */
+.hin {
+    background: #6CB6E3;
+}
+.hin img {
+    display: none;
 }

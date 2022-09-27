@@ -60,7 +60,8 @@ body {
 }
 
 /* typography */
-h1 {
+h1,
+.heading-1{
     font-family: 'Zurich', Arial, Helvetica, sans-serif;
     font-weight: 400;
     font-size: 2.1em;
@@ -71,7 +72,8 @@ h1 {
     text-transform: none;
 }
 
-h2 {
+h2,
+.heading-2 {
     font-family: 'Zurich', Arial, Helvetica, sans-serif;
     font-weight: 400;
     font-size: 1.6em;
@@ -82,7 +84,8 @@ h2 {
     text-transform: none;
 }
 
-h3 {
+h3,
+.heading-3 {
     font-family: 'Zurich', Arial, Helvetica, sans-serif;
     font-weight: 400;
     font-size: 1.6em;
@@ -93,7 +96,8 @@ h3 {
     text-transform: none;
 }
 
-h4 {
+h4,
+.heading-4 {
     font-family: 'Zurich', Arial, Helvetica, sans-serif;
     font-weight: 500;
     font-size: 1.8em;
@@ -104,7 +108,8 @@ h4 {
     text-transform: none;
 }
 
-h5 {
+h5,
+.heading-5 {
     font-family: 'Zurich', Arial, Helvetica, sans-serif;
     font-weight: 400;
     font-size: 1.4em;
@@ -115,7 +120,8 @@ h5 {
     text-transform: none;
 }
 
-h6 {
+h6,
+.heading-6 {
     font-family: 'Zurich', Arial, Helvetica, sans-serif;
     font-weight: 400;
     font-size: 1.2em;
@@ -177,15 +183,11 @@ a:hover {
 
 /* background */
 .hin {
-    position: absolute;
     z-index: -1;
-    overflow: hidden;
-    background: url(galerie-startseite/eingang-wohnbereich-01.jpg) 0 93px / contain no-repeat scroll padding-box border-box rgb(255, 255, 255);
-    top: 0;
-    left: 0;
-    margin: 0;
     width: 100%;
     height: 100%;
+    position: absolute;
+    top: 93px;
 }
 
 .bgweiss {

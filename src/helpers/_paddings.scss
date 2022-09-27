@@ -1,104 +1,61 @@
 /* padding helpers */
 
-.pt-0 {
-  padding-top: 0 !important;
-}
-.pr-0 {
-  padding-right: 0 !important;
-}
-.pb-0 {
-  padding-bottom: 0 !important;
-}
-.pl-0 {
-  padding-left: 0 !important;
-}
-.px-0 {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-.py-0 {
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-}
-.p-0 {
-  padding: 0 !important;
-}
+$paddings: (
+        'top':'t',
+        'right':'r',
+        'bottom':'b',
+        'left':'l',
+        'horizontal':'x',
+        'vertical':'x',
+        'equal':''
+);
 
-.pt-half {
-  @include padding-top(.5, true);
-}
-.pr-half {
-  @include padding-right(.5, true);
-}
-.pb-half {
-  @include padding-bottom(.5, true);
-}
-.pl-half {
-  @include padding-left(.5, true);
-}
-.px-half {
-  @include padding-left(.5, true);
-  @include padding-right(.5, true);
-}
-.py-half {
-  @include padding-top(.5, true);
-  @include padding-bottom(.5, true);
-}
-.p-half {
-  @include padding-equal(.5, true);
+@each $direction, $prefix in $paddings {
+  [class*="p#{$prefix}-"] {
+    @if $prefix != '' AND $prefix != 'x' AND $prefix != 'y' {
+      padding-#{$direction}: 0;
+    } @else if $prefix == 'x' {
+      padding-left: 0;
+      padding-right: 0;
+    } @else if $prefix == 'y' {
+      padding-top: 0;
+      padding-bottom: 0;
+    } @else {
+      padding: 0;
+    }
+  }
+
+  .p#{$prefix}-sm-0 {
+    @if $prefix != '' AND $prefix != 'x' AND $prefix != 'y' {
+      padding-#{$direction}: 0 !important;
+    } @else if $prefix == 'x' {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    } @else if $prefix == 'y' {
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+    } @else {
+      padding: 0 !important;
+    }
+  }
+
+  .p#{$prefix}-sm-half {
+    @include padding-prefix(.5, $prefix, $direction, true);
+  }
 }
 
 @for $i from 1 through $brick-size {
   $half: $i + 0.5;
 
-  .pt-#{$i} {
-    @include padding-top($i, true);
-  }
-  .pr-#{$i} {
-    @include padding-right($i, true);
-  }
-  .pb-#{$i} {
-    @include padding-bottom($i, true);
-  }
-  .pl-#{$i} {
-    @include padding-left($i, true);
-  }
-  .px-#{$i} {
-    @include padding-left($i, true);
-    @include padding-right($i, true);
-  }
-  .py-#{$i} {
-    @include padding-top($i, true);
-    @include padding-bottom($i, true);
-  }
-  .p-#{$i} {
-    @include padding-equal($i, true);
-  }
-
-  // half
-  @if $i < $brick-size {
-    .pt-#{$i}_half {
-      @include padding-top($half, true);
+  @each $direction, $prefix in $paddings {
+    .p#{$prefix}-sm-#{$i} {
+      @include padding-prefix($i, $prefix, $direction, true);
     }
-    .pr-#{$i}_half {
-      @include padding-right($half, true);
-    }
-    .pb-#{$i}_half {
-      @include padding-bottom($half, true);
-    }
-    .pl-#{$i}_half {
-      @include padding-left($half, true);
-    }
-    .px-#{$i}_half {
-      @include padding-left($half, true);
-      @include padding-right($half, true);
-    }
-    .py-#{$i}_half {
-      @include padding-top($half, true);
-      @include padding-bottom($half, true);
-    }
-    .p-#{$i}_half {
-      @include padding-equal($half, true);
+    // half
+    @if $i < $brick-size {
+      .p#{$prefix}-sm-#{$i}_half {
+        @include padding-prefix($half, $prefix, $direction, true);
+      }
     }
   }
 }
@@ -109,81 +66,38 @@
 
   @import 'src/mixins/padding';
 
-  .pt-half {
-    @include padding-top(.5, true);
-  }
-  .pr-half {
-    @include padding-right(.5, true);
-  }
-  .pb-half {
-    @include padding-bottom(.5, true);
-  }
-  .pl-half {
-    @include padding-left(.5, true);
-  }
-  .px-half {
-    @include padding-left(.5, true);
-    @include padding-right(.5, true);
-  }
-  .py-half {
-    @include padding-top(.5, true);
-    @include padding-bottom(.5, true);
-  }
-  .p-half {
-    @include padding-equal(.5, true);
+  @each $direction, $prefix in $paddings {
+    [class*="p#{$prefix}-sm-"] {
+      @if $prefix != '' AND $prefix != 'x' AND $prefix != 'y' {
+        padding-#{$direction}: 0;
+      } @else if $prefix == 'x' {
+        padding-left: 0;
+        padding-right: 0;
+      } @else if $prefix == 'y' {
+        padding-top: 0;
+        padding-bottom: 0;
+      } @else {
+        padding: 0;
+      }
+    }
+
+    .p#{$prefix}-half {
+      @include padding-prefix(.5, $prefix, $direction, true);
+    }
   }
 
   @for $i from 1 through $brick-size {
     $half: $i + 0.5;
 
-    .pt-#{$i} {
-      @include padding-top($i, true);
-    }
-    .pr-#{$i} {
-      @include padding-right($i, true);
-    }
-    .pb-#{$i} {
-      @include padding-bottom($i, true);
-    }
-    .pl-#{$i} {
-      @include padding-left($i, true);
-    }
-    .px-#{$i} {
-      @include padding-left($i, true);
-      @include padding-right($i, true);
-    }
-    .py-#{$i} {
-      @include padding-top($i, true);
-      @include padding-bottom($i, true);
-    }
-    .p-#{$i} {
-      @include padding-equal($i, true);
-    }
-
-    // half
-    @if $i < $brick-size {
-      .pt-#{$i}_half {
-        @include padding-top($half, true);
+    @each $direction, $prefix in $paddings {
+      .p#{$prefix}-#{$i} {
+        @include padding-prefix($i, $prefix, $direction, true);
       }
-      .pr-#{$i}_half {
-        @include padding-right($half, true);
-      }
-      .pb-#{$i}_half {
-        @include padding-bottom($half, true);
-      }
-      .pl-#{$i}_half {
-        @include padding-left($half, true);
-      }
-      .px-#{$i}_half {
-        @include padding-left($half, true);
-        @include padding-right($half, true);
-      }
-      .py-#{$i}_half {
-        @include padding-top($half, true);
-        @include padding-bottom($half, true);
-      }
-      .p-#{$i}_half {
-        @include padding-equal($half, true);
+      // half
+      @if $i < $brick-size {
+        .p#{$prefix}-#{$i}_half {
+          @include padding-prefix($half, $prefix, $direction, true);
+        }
       }
     }
   }

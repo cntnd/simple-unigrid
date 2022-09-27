@@ -1,21 +1,11 @@
 // Content
-// todo
 
 .container {
   width: 95%;
   margin-left: auto;
   margin-right: auto;
 
-  @include padding(0, .5);
-
   @media screen and (min-width: #{ $max-width + 5 + 'em'}) {
-    $leading: $leading-desktop;
-    $leading-rem: $leading-rem-desktop;
-
-    @import '../mixins/padding';
-
-    @include padding(0, .5);
-
     width: 85%;
     max-width: 1280px;
   }

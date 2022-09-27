@@ -1,128 +1,75 @@
 /* margin helpers */
 
-.mt-auto {
-  margin-top: auto !important;
-}
-.mr-auto {
-  margin-right: auto !important;
-}
-.mb-auto {
-  margin-bottom: auto !important;
-}
-.ml-auto {
-  margin-left: auto !important;
-}
-.mx-auto {
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-.my-auto {
-  margin-top: auto !important;
-  margin-bottom: auto !important;
-}
-.m-auto {
-  margin: auto !important;
-}
+$margins: (
+        'top':'t',
+        'right':'r',
+        'bottom':'b',
+        'left':'l',
+        'horizontal':'x',
+        'vertical':'x',
+        'equal':''
+);
 
-.mt-0 {
-  margin-top: 0 !important;
-}
-.mr-0 {
-  margin-right: 0 !important;
-}
-.mb-0 {
-  margin-bottom: 0 !important;
-}
-.ml-0 {
-  margin-left: 0 !important;
-}
-.mx-0 {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
-.my-0 {
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-}
-.m-0 {
-  margin: 0 !important;
-}
+@each $direction, $prefix in $margins {
+  [class*="m#{$prefix}-"] {
+    @if $prefix != '' AND $prefix != 'x' AND $prefix != 'y' {
+      margin-#{$direction}: 0;
+    } @else if $prefix == 'x' {
+      margin-left: 0;
+      margin-right: 0;
+    } @else if $prefix == 'y' {
+      margin-top: 0;
+      margin-bottom: 0;
+    } @else {
+      margin: 0;
+    }
+  }
 
-.mt-half {
-  @include margin-top(.5, true);
-}
-.mr-half {
-  @include margin-right(.5, true);
-}
-.mb-half {
-  @include margin-bottom(.5, true);
-}
-.ml-half {
-  @include margin-left(.5, true);
-}
-.mx-half {
-  @include margin-left(.5, true);
-  @include margin-right(.5, true);
-}
-.my-half {
-  @include margin-top(.5, true);
-  @include margin-bottom(.5, true);
-}
-.m-half {
-  @include margin-equal(.5, true);
+  .m#{$prefix}-sm-auto {
+    @if $prefix != '' AND $prefix != 'x' AND $prefix != 'y' {
+      margin-#{$direction}: auto !important;
+    } @else if $prefix == 'x' {
+      margin-left: auto !important;
+      margin-right: auto !important;
+    } @else if $prefix == 'y' {
+      margin-top: auto !important;
+      margin-bottom: auto !important;
+    } @else {
+      margin: auto !important;
+    }
+  }
+
+  .m#{$prefix}-sm-0 {
+    @if $prefix != '' AND $prefix != 'x' AND $prefix != 'y' {
+      margin-#{$direction}: 0 !important;
+    } @else if $prefix == 'x' {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    } @else if $prefix == 'y' {
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+    } @else {
+      margin: 0 !important;
+    }
+  }
+
+  .m#{$prefix}-sm-half {
+    @include margin-prefix(.5, $prefix, $direction, true);
+  }
 }
 
 @for $i from 1 through $brick-size {
   $half: $i + 0.5;
 
-  .mt-#{$i} {
-    @include margin-top($i, true);
-  }
-  .mr-#{$i} {
-    @include margin-right($i, true);
-  }
-  .mb-#{$i} {
-    @include margin-bottom($i, true);
-  }
-  .ml-#{$i} {
-    @include margin-left($i, true);
-  }
-  .mx-#{$i} {
-    @include margin-left($i, true);
-    @include margin-right($i, true);
-  }
-  .my-#{$i} {
-    @include margin-top($i, true);
-    @include margin-bottom($i, true);
-  }
-  .m-#{$i} {
-    @include margin-equal($i, true);
-  }
-
-  // half
-  @if $i < $brick-size {
-    .mt-#{$i}_half {
-      @include margin-top($half, true);
+  @each $direction, $prefix in $margins {
+    .m#{$prefix}-sm-#{$i} {
+      @include margin-prefix($i, $prefix, $direction, true);
     }
-    .mr-#{$i}_half {
-      @include margin-right($half, true);
-    }
-    .mb-#{$i}_half {
-      @include margin-bottom($half, true);
-    }
-    .ml-#{$i}_half {
-      @include margin-left($half, true);
-    }
-    .mx-#{$i}_half {
-      @include margin-left($half, true);
-      @include margin-right($half, true);
-    }
-    .my-#{$i}_half {
-      @include margin-top($half, true);
-      @include margin-bottom($half, true);
-    }
-    .m-#{$i}_half {
-      @include margin-equal($half, true);
+    // half
+    @if $i < $brick-size {
+      .m#{$prefix}-sm-#{$i}_half {
+        @include margin-prefix($half, $prefix, $direction, true);
+      }
     }
   }
 }
@@ -133,81 +80,38 @@
 
   @import 'src/mixins/margin';
 
-  .mt-half {
-    @include margin-top(.5, true);
-  }
-  .mr-half {
-    @include margin-right(.5, true);
-  }
-  .mb-half {
-    @include margin-bottom(.5, true);
-  }
-  .ml-half {
-    @include margin-left(.5, true);
-  }
-  .mx-half {
-    @include margin-left(.5, true);
-    @include margin-right(.5, true);
-  }
-  .my-half {
-    @include margin-top(.5, true);
-    @include margin-bottom(.5, true);
-  }
-  .m-half {
-    @include margin-equal(.5, true);
+  @each $direction, $prefix in $margins {
+    [class*="m#{$prefix}-sm-"] {
+      @if $prefix != '' AND $prefix != 'x' AND $prefix != 'y' {
+        margin-#{$direction}: 0;
+      } @else if $prefix == 'x' {
+        margin-left: 0;
+        margin-right: 0;
+      } @else if $prefix == 'y' {
+        margin-top: 0;
+        margin-bottom: 0;
+      } @else {
+        margin: 0;
+      }
+    }
+
+    .m#{$prefix}-half {
+      @include margin-prefix(.5, $prefix, $direction, true);
+    }
   }
 
   @for $i from 1 through $brick-size {
     $half: $i + 0.5;
 
-    .mt-#{$i} {
-      @include margin-top($i, true);
-    }
-    .mr-#{$i} {
-      @include margin-right($i, true);
-    }
-    .mb-#{$i} {
-      @include margin-bottom($i, true);
-    }
-    .ml-#{$i} {
-      @include margin-left($i, true);
-    }
-    .mx-#{$i} {
-      @include margin-left($i, true);
-      @include margin-right($i, true);
-    }
-    .my-#{$i} {
-      @include margin-top($i, true);
-      @include margin-bottom($i, true);
-    }
-    .m-#{$i} {
-      @include margin-equal($i, true);
-    }
-
-    // half
-    @if $i < $brick-size {
-      .mt-#{$i}_half {
-        @include margin-top($half, true);
+    @each $direction, $prefix in $margins {
+      .m#{$prefix}-#{$i} {
+        @include margin-prefix($i, $prefix, $direction, true);
       }
-      .mr-#{$i}_half {
-        @include margin-right($half, true);
-      }
-      .mb-#{$i}_half {
-        @include margin-bottom($half, true);
-      }
-      .ml-#{$i}_half {
-        @include margin-left($half, true);
-      }
-      .mx-#{$i}_half {
-        @include margin-left($half, true);
-        @include margin-right($half, true);
-      }
-      .my-#{$i}_half {
-        @include margin-top($half, true);
-        @include margin-bottom($half, true);
-      }
-      .m-#{$i}_half {
-        @include margin-equal($half, true);
+      // half
+      @if $i < $brick-size {
+        .m#{$prefix}-#{$i}_half {
+          @include margin-prefix($half, $prefix, $direction, true);
+        }
       }
     }
   }

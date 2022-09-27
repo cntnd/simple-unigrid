@@ -17,10 +17,6 @@
   @import 'src/mixins/brick';
 
   @for $i from 1 through $brick-size {
-    $width: ($brick-width / $brick-size) * $i;
-    $margin: #{ $leading + 'px'};
-    $margin-rem: #{ $leading-rem + 'rem'};
-
     .append--#{$i} {
       @include brick-spacing($i, false);
     }

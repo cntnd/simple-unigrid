@@ -61,3 +61,26 @@
   padding-left: #{ $number * $leading + 'px' + $important};
   padding-left: #{ $number * $leading-rem + 'rem' + $important};
 }
+
+@mixin padding-prefix($number,$prefix,$direction,$is-important:false) {
+  $important: '';
+  @if $is-important {
+    $important: ' !important';
+  }
+
+  @if $prefix != '' AND $prefix != 'x' AND $prefix != 'y' {
+    padding-#{$direction}: #{ $number * $leading + 'px' + $important};
+    padding-#{$direction}: #{ $number * $leading-rem + 'rem' + $important};
+  }
+  @else if $prefix == 'x' {
+    @include padding-left($number, $is-important);
+    @include padding-right($number, $is-important);
+  }
+  @else if $prefix == 'y' {
+    @include padding-top($number, $is-important);
+    @include padding-bottom($number, $is-important);
+  }
+  @else {
+    @include padding-equal($number, $is-important);
+  }
+}

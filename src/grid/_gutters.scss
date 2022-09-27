@@ -11,18 +11,18 @@
   .unigrid-row {
 
     /* equal gutters */
-    &.g-#{$i} {
+    &.brick-g-#{$i} {
       @include brick-gutter-horizontal($gutter-horizontal);
       @include brick-gutter-vertical($gutter-vertical);
     }
 
     /* horizontal gutters */
-    &.gx-#{$i} {
+    &.brick-gx-#{$i} {
       @include brick-gutter-horizontal($gutter-horizontal);
     }
 
     /* vertical gutters */
-    &.gy-#{$i} {
+    &.brick-gy-#{$i} {
       @include brick-gutter-vertical($gutter-vertical);
     }
 
@@ -92,18 +92,18 @@
     .unigrid-row {
 
       /* equal gutters */
-      &.g-#{$i} {
+      &.brick-g-#{$i} {
         @include brick-gutter-horizontal($gutter-horizontal);
         @include brick-gutter-vertical($gutter-vertical);
       }
 
       /* horizontal gutters */
-      &.gx-#{$i} {
+      &.brick-gx-#{$i} {
         @include brick-gutter-horizontal($gutter-horizontal);
       }
 
       /* vertical gutters */
-      &.gy-#{$i} {
+      &.brick-gy-#{$i} {
         @include brick-gutter-vertical($gutter-vertical);
       }
 

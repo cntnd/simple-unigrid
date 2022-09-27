@@ -2,8 +2,8 @@
 @mixin brick-width($number) {
   $width: ($brick-width / $brick-size) * $number;
 
+  box-sizing: border-box;
   width: calc(#{$width} - var(--grid-gutter-x));
-
   @include brick-margin();
 }
 
