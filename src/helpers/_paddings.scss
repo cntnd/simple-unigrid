@@ -64,7 +64,7 @@ $paddings: (
   $leading: $leading-desktop;
   $leading-rem: $leading-rem-desktop;
 
-  @import 'src/mixins/padding';
+  @import '../mixins/padding';
 
   @each $direction, $prefix in $paddings {
     [class*="p#{$prefix}-sm-"] {

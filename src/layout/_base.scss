@@ -42,8 +42,8 @@ html {
     $leading: $leading-desktop;
     $leading-rem: $leading-rem-desktop;
 
-    @import 'src/mixins/line-height';
-    @import 'src/mixins/margin';
+    @import '../mixins/line-height';
+    @import '../mixins/margin';
 
     @include line-height(1);
 

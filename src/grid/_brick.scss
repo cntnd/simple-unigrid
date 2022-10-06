@@ -46,9 +46,9 @@
   $leading-rem: $leading-rem-desktop;
   $brick-width: $brick-width-desktop;
 
-  @import 'src/mixins/brick';
-  @import 'src/mixins/padding';
-  @import 'src/mixins/row';
+  @import '../mixins/brick';
+  @import '../mixins/padding';
+  @import '../mixins/row';
 
   .unigrid-row {
     flex-wrap: nowrap;
