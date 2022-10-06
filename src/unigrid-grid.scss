@@ -20,7 +20,8 @@
 
 @import "layout/content";
 
-@import "modules/text";
+// ungrid text - replacement
+@import "modules/unigrid_text";
 
 @import 'grid/alignment';
 @import 'grid/brick';

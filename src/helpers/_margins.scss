@@ -1,13 +1,17 @@
 /* margin helpers */
+:root {
+  --leading: #{$leading + 'px'};
+  --leading-rem: #{$leading-rem + 'rem'};
+}
 
 $margins: (
-        'top':'t',
-        'right':'r',
-        'bottom':'b',
-        'left':'l',
-        'horizontal':'x',
-        'vertical':'x',
-        'equal':''
+  'top':'t',
+  'right':'r',
+  'bottom':'b',
+  'left':'l',
+  'horizontal':'x',
+  'vertical':'x',
+  'equal':''
 );
 
 @each $direction, $prefix in $margins {
@@ -77,6 +81,11 @@ $margins: (
 @media screen and (min-width: #{ $max-width + 5 + 'em'}) {
   $leading: $leading-desktop;
   $leading-rem: $leading-rem-desktop;
+
+  :root {
+    --leading: #{$leading + 'px'};
+    --leading-rem: #{$leading-rem + 'rem'};
+  }
 
   @import 'src/mixins/margin';
 

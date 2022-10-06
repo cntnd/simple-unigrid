@@ -8,11 +8,13 @@
     max-width: 100%;
     height: auto;
 }
-
-/* DEV ONLY */
-.hin {
-    background: #6CB6E3;
+/* subnavigaiton */
+.subnavigation .contact {
+    position: static;
 }
-.hin img {
-    display: none;
+
+/* util */
+.google-maps iframe {
+    height: 400px;
+    width: 100%;
 }

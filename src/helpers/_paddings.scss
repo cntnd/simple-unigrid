@@ -1,13 +1,13 @@
 /* padding helpers */
 
 $paddings: (
-        'top':'t',
-        'right':'r',
-        'bottom':'b',
-        'left':'l',
-        'horizontal':'x',
-        'vertical':'x',
-        'equal':''
+  'top':'t',
+  'right':'r',
+  'bottom':'b',
+  'left':'l',
+  'horizontal':'x',
+  'vertical':'x',
+  'equal':''
 );
 
 @each $direction, $prefix in $paddings {

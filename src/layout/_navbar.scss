@@ -1,0 +1,25 @@
+// navbar
+.navbar {
+  ul {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.nav-item a {
+  color: white;
+  @include margin-horizontal(.5);
+
+  &:link {
+    text-decoration: none;
+  }
+
+  &:visited {
+    color: white;
+  }
+
+  &:hover,
+  &:active {
+    color: gray;
+  }
+}

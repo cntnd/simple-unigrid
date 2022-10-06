@@ -14,11 +14,24 @@ header {
     @include margin-horizontal(.5,false);
   }
 
-  .brand {
+  .brand,
+  .brand:link,
+  .brand:hover,
+  .brand:visited,
+  .brand:active {
     font-weight: $font-weight-heavy;
     @include font-size(2.5);
     @include line-height(1);
     @include margin-horizontal(.5,false);
+
+    color: $header-color !important;
+
+    &:link,
+    &:active,
+    &:visited,
+    &:hover {
+      text-decoration: none;
+    }
   }
 
   .menu + .brand {

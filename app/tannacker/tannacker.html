@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="../unigrid-grid.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
     <link rel="stylesheet" href="tannacker.css">
     <link rel="stylesheet" type="text/css" media="screen and (max-width: 767px)" href="mobile.css">
+
+    <!-- jquery -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
+    <script src="tannacker.js"></script>
 
     <title>tannacker</title>
 </head>
@@ -35,7 +40,7 @@
             <div class="unigrid-row brick-p-2 mh700">
                 <!-- SUBNAVIGATION -->
                 <div class="brick--3 order-sm--1 subnavigation bginfo">
-                    <a href="/" class="titel-menuaktiv">NAV TITEL</a>
+                    <a href="/" class="titel menulink active">NAV TITEL</a>
                     <div class="mt-1">
                         <ul class="subnav">
                             <li><a href="#" class="menulink">SUBNAVIGATION</a></li>
@@ -53,10 +58,100 @@
                 <div class="brick--9">
                     <h1>NAV TITEL</h1>
                     Text folgt.
+                    <hr />
+                    <h2>Video</h2>
+                    <iframe class="full-width" src="https://www.youtube.com/embed/78GtW3GKhOM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <hr />
+                    <h2>Lenkungsgremium</h2>
+                    <div class="unigrid-row brick-p-0 brick-g-2 wrap">
+                        <div class="brick--3 brick-sm--6">
+                            <img class="full-width" src="upload/institution/glauser.jpg" alt="Lenkungsgremium" />
+                            <p class="heading-6">Stephanie Glauser</p>
+                            <p class="klein">Text folgt</p>
+                        </div>
+                        <div class="brick--3 brick-sm--6">
+                            <img class="full-width" src="upload/institution/glauser.jpg" alt="Lenkungsgremium" />
+                            <p class="heading-6">Stephanie Glauser</p>
+                            <p class="klein">Text folgt</p>
+                        </div>
+                        <div class="brick--3 brick-sm--6">
+                            <img class="full-width" src="upload/institution/glauser.jpg" alt="Lenkungsgremium" />
+                            <p class="heading-6">Stephanie Glauser</p>
+                            <p class="klein">Text folgt</p>
+                        </div>
+                        <div class="brick--3 brick-sm--6">
+                            <img class="full-width" src="upload/institution/glauser.jpg" alt="Lenkungsgremium" />
+                            <p class="heading-6">Stephanie Glauser</p>
+                            <p class="klein">Text folgt</p>
+                        </div>
+                        <div class="brick--3 brick-sm--6">
+                            <img class="full-width" src="upload/institution/glauser.jpg" alt="Lenkungsgremium" />
+                            <p class="heading-6">Stephanie Glauser</p>
+                            <p class="klein">Text folgt</p>
+                        </div>
+                        <div class="brick--3 brick-sm--6">
+                            <img class="full-width" src="upload/institution/glauser.jpg" alt="Lenkungsgremium" />
+                            <p class="heading-6">Stephanie Glauser</p>
+                            <p class="klein">Text folgt</p>
+                        </div>
+                    </div>
                 </div>
 
             </div>
         </div>
+
+        <!-- SITEMAP -->
+        <div class="offcanvas animate__animated animate__faster" id="sitemap">
+            <div class="offvanvas__header px-half h-3">
+                <button type="button" class="btn-close offcanvas-off h-1 mr-half" aria-label="Close"></button>
+                <p class="heading-1">Sitemap</p>
+            </div>
+            <div class="">
+                <ul class="bginfo p-1">
+                    <li><a href="#" class="menulink">Info</a></li>
+                    <ul>
+                        <li><a href="#" class="menulink">Kontakt</a></li>
+                        <li><a href="#" class="menulink">Kennenlernen</a></li>
+                        <li><a href="#" class="menulink">Stellen</a></li>
+                        <li><a href="#" class="menulink">Produkte</a></li>
+                        <li><a href="#" class="menulink">Anlässe</a></li>
+                        <li><a href="#" class="menulink">Spenden</a></li>
+                    </ul>
+                </ul>
+
+                <ul class="bginstitution p-1">
+                    <li><a href="#" class="menulink">Institution</a></li>
+                    <ul>
+                        <li><a href="#" class="menulink">Strategie</a></li>
+                        <li><a href="#" class="menulink">Organisation</a></li>
+                        <li><a href="#" class="menulink">Porträt</a></li>
+                        <li><a href="#" class="menulink">Teilhabe</a></li>
+                        <li><a href="#" class="menulink">Konzepte</a></li>
+                        <li><a href="#" class="menulink">Fakten</a></li>
+                    </ul>
+                </ul>
+
+                <ul class="bgstandorte p-1">
+                    <li><a href="#" class="menulink">Standorte</a></li>
+                    <ul>
+                        <li><a href="#" class="menulink">Strategie</a></li>
+                        <li><a href="#" class="menulink">Organisation</a></li>
+                        <li><a href="#" class="menulink">Porträt</a></li>
+                        <li><a href="#" class="menulink">Teilhabe</a></li>
+                        <li><a href="#" class="menulink">Konzepte</a></li>
+                        <li><a href="#" class="menulink">Fakten</a></li>
+                    </ul>
+                </ul>
+
+                <ul class="subnav">
+                    <li><a href="#" class="menulink">SUBNAVIGATION</a></li>
+                    <li><a href="#" class="menulink">SUBNAVIGATION</a></li>
+                    <li><a href="#" class="menulink">SUBNAVIGATION</a></li>
+                </ul>
+            </div>
+            </div>
+        </div>
+        <div class="offcanvas-backdrop offcanvas-off"></div>
     </div>
 
 </body>
