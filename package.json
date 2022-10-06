@@ -1,6 +1,6 @@
 {
   "name": "@tdascoli/simple-unigrid",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple Unigrid CSS Framework",
   "devDependencies": {
     "browser-sync": "^2.26.7",

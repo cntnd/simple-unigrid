@@ -87,7 +87,7 @@ $margins: (
     --leading-rem: #{$leading-rem + 'rem'};
   }
 
-  @import 'src/mixins/margin';
+  @import '../mixins/margin';
 
   @each $direction, $prefix in $margins {
     [class*="m#{$prefix}-sm-"] {
