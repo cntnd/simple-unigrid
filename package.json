@@ -1,5 +1,5 @@
 {
-  "name": "simple-unigrid",
+  "name": "@tdascoli/simple-unigrid",
   "version": "1.0.0",
   "description": "Simple Unigrid CSS Framework",
   "devDependencies": {
@@ -21,5 +21,12 @@
   "bugs": {
     "url": "https://github.com/cntnd/simple-unigrid/issues"
   },
-  "homepage": "https://github.com/cntnd/simple-unigrid#readme"
+  "homepage": "https://github.com/cntnd/simple-unigrid#readme",
+  "main": "README.md",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "unigrid"
+  ]
 }
